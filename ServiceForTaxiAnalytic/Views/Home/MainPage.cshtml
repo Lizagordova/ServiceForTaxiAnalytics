@@ -1,0 +1,34 @@
+﻿
+@{
+	Layout = null;
+	ViewBag.Title = "MainPage";
+}
+<head>
+	<p>Здравствуйте! Вас приветствует наш сервис по аналитике цен на такси в разное время дня.
+	Для аналитики Вы можете ввести маршрут, по которому бы Вам было интересно узнать аналитику.
+	Мы проведем аналитику в течение дня. И ровно через сутки пришлём её Вам на почту. Спасибо за доверие!</p>
+</head>
+<body>
+	<div>
+		<form method="post" action="">
+			<input type="hidden" value="@ViewBag.UserIp" name="UserIp" />
+			<table>
+				<tr>
+					<td><p>Введите свой e-mail</p></td>
+					<td><input type="text" placeholder="e-mail" name="Email" /></td>
+				</tr>
+				<tr>
+					<td><p>Введите адрес отправления</p></td>
+					<td><input type="text" placeholder="Откуда" name="From" /></td>
+				</tr>
+				<tr>
+					<td><p>Введите адрес назначения</p></td>
+					<td><input type="text" placeholder="А куда вообще" name="To"/></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Получить аналитику" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
