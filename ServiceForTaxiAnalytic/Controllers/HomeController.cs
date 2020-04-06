@@ -13,12 +13,13 @@ namespace ServiceForTaxiAnalytic.Controllers
 		public ActionResult MainPage()
 		{
 			string ip = HttpContext.Request.UserHostAddress;
-			var user = new User() { Ip = ip };
+			var user = new User() { Id=1,Ip = ip };
 			db.Users.Add(user);
 			db.SaveChanges();
 			ViewBag.UserIp = ip;
 			return View();
 		}
+
 		[HttpPost]
 		public ActionResult MainPage(RouteForFinding route)
 		{
