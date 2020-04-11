@@ -10,5 +10,6 @@ namespace ServiceForTaxiAnalytic.Models
 	{
 		public DbSet<User> Users { get; set; }
 		public DbSet<RouteForFinding> Routes { get; set; }
+		public DbSet<UserRoute> UserRoutes { get; set; }
 	}
 }

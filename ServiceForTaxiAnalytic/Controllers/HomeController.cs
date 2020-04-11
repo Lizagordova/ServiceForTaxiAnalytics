@@ -13,9 +13,11 @@ namespace ServiceForTaxiAnalytic.Controllers
 		public ActionResult MainPage()
 		{
 			string ip = HttpContext.Request.UserHostAddress;
-			var user = new User() { Id=1,Ip = ip };
+			HttpContext.Response.Cookies["id"].Value = "12";//TODO: разберись получше с куками!!!
+			var user = new User() {Ip = ip };
 			db.Users.Add(user);
 			db.SaveChanges();
+			ViewBag.UserId = db.Users.FirstOrDefault(m => m.Ip == ip).UserId;
 			ViewBag.UserIp = ip;
 			return View();
 		}
@@ -29,5 +31,7 @@ namespace ServiceForTaxiAnalytic.Controllers
 			db.SaveChanges();
 			return View("AddRoute");
 		}
+
+		
 	}
 }
