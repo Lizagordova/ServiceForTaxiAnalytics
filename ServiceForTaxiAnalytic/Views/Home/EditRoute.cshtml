@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "EditRoute";
+}
+@model ServiceForTaxiAnalytic.Models.RouteForFinding
+<h2>Редактирование маршрута</h2>
+@using (Html.BeginForm("EditRoute", "Home", FormMethod.Post))
+{
+<fieldset>
+    @Html.HiddenFor(r => r.RouteForFindingId)
+    <p>
+        @Html.LabelFor(r => r.From, "Откуда")
+        <br />
+        @Html.EditorFor(r => r.From)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.To, "Куда")
+        <br />
+        @Html.EditorFor(r => r.To)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Email, "E-mail")
+        <br />
+        @Html.EditorFor(r => r.Email)
+    </p>
+    <p><input type="submit" value="Отправить" /></p>
+</fieldset>
+}
+

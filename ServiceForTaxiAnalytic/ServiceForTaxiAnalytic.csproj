@@ -146,6 +146,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Log.cs" />
     <Compile Include="Models\RouteForFinding.cs" />
     <Compile Include="Models\ServiceContext.cs" />
     <Compile Include="Models\ServiceDbInitializer.cs" />
@@ -193,6 +194,7 @@
     <Content Include="Views\Home\MainPage.cshtml" />
     <Content Include="Views\UserHandler\AddRoute.cshtml" />
     <Content Include="Views\Home\AddRoute.cshtml" />
+    <Content Include="Views\Home\EditRoute.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Worker\" />

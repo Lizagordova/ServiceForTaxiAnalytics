@@ -2,6 +2,22 @@
 @{
     ViewBag.Title = "AddRoute";
 }
+
 <p>Your Id =@ViewBag.FromCookie</p>
 <p>Большое спасибо за доверие! Мы пришлём Вам информацию через сутки!</p>
+@using (Html.BeginForm("EditRoute", "Home", FormMethod.Get))
+{
+    <input type="hidden" value="1" />
+    <p><input type="submit" value="Отредактировать" /></p>
+}
+@using (Html.BeginForm("AddNewRoute", "Home", FormMethod.Get))
+{
+    <p><input type="submit" value="Добавить" /></p>
+}
+@using (Html.BeginForm("DeleteRoute", "Home", FormMethod.Post))
+{
+    <input type="hidden" value="1" />
+    <p><input type="submit" value="Удалить" /></p>
+}
+
 

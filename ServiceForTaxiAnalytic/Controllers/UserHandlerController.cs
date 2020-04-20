@@ -15,48 +15,22 @@ namespace ServiceForTaxiAnalytic.Controllers
     {
         ServiceContext db = new ServiceContext();
 
-        [HttpPost]
-       public ActionResult AddRoute(RouteForFinding route)
+        
+        
+        [HttpGet]
+        public ActionResult EditRoute(int? id)//TODO: здесь редактирование по другим параметрам сделай
         {
-            db.Routes.Add(route);
-            db.SaveChanges();
-            CreateCsvReport(route, ViewBag.UserIp);
-            var routeId = db.Routes.FirstOrDefault(m => m.Email == route.Email).RouteForFindingId;//TODO: найди здесь способ другой связи,может быть,с помощью метаданных каких-нибудь или атрибутов
-            var userId = ViewBag.UserId;
-            var userRoute = new UserRoute { UserId = userId, RouteId = routeId, RequestTime = DateTime.Now, Taxi = Taxi.Yandex };
-            db.UserRoutes.Add(userRoute);
-
-            ViewBag.FromCookie = HttpContext.Request.Cookies["id"].Value;
-            return View();
-        }
-
-        private void CreateCsvReport(RouteForFinding route, int userIp)
-        {
-            var csvPath = "C://ServiceForTaxiAnalytic//"+userIp.ToString()+"csv";
-            var streamWriter = new StreamWriter(csvPath);
-            var csvWriter = new CsvHelper.CsvWriter(streamWriter, System.Globalization.CultureInfo.InvariantCulture);
-            csvWriter.Configuration.Delimiter = "\t";
-            if(FileSize(csvPath) == 0)
+            if(id == null)
             {
-                csvWriter.WriteField("DateTime");
-                csvWriter.WriteField("Price");
-                csvWriter.NextRecord();
+                return HttpNotFound();
             }
-            csvWriter.WriteField(DateTime.Now.ToString());
-            csvWriter.WriteField(1234.ToString());
-            csvWriter.NextRecord();
-            csvWriter = null;
-            streamWriter.Close();
+            RouteForFinding route = db.Routes.Find(id);
+            ViewBag.Route = route;
+            if(route != null)
+            {
+                return View("EditRoute");
+            }
+            return HttpNotFound();
         }
-
-        private long FileSize(string path)
-        {
-            FileInfo file = new FileInfo(path);
-            return file.Length;
-        }
-        public ActionResult Index()
-        {
-            return View();
-        }   
     }
 }
