@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ServiceForTaxiAnalytic.Controllers
@@ -13,7 +12,8 @@ namespace ServiceForTaxiAnalytic.Controllers
 	public class HomeController : Controller
 	{
 		ServiceContext db = new ServiceContext();
-		public ActionResult MainPage()
+
+		public ActionResult MainPageWithoutAuthorization()
 		{
 			string ip = HttpContext.Request.UserHostAddress;
 			HttpContext.Response.Cookies["id"].Value = "12";//TODO: разберись получше с куками!!!
@@ -25,6 +25,16 @@ namespace ServiceForTaxiAnalytic.Controllers
 			return View();
 		}
 
+		public ActionResult MainPage()
+		{
+			return View();
+		}
+
+		public ActionResult MyRoutes()
+		{
+			return View();
+		}
+		
 		[HttpPost]
 		public ActionResult MainPage(RouteForFinding route)
 		{

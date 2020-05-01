@@ -139,9 +139,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AuthorizationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserHandlerController.cs" />
     <Compile Include="Controllers\WorkerController.cs" />
+    <Compile Include="Enums\AuthorizationType.cs" />
     <Compile Include="Enums\Taxi.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -180,6 +182,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Authorization\Entrance.cshtml" />
+    <Content Include="Views\Authorization\Registration.cshtml" />
+    <Content Include="Views\Authorization\Test.cshtml" />
+    <Content Include="Views\Home\MainPage.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -191,7 +197,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\MainPage.cshtml" />
+    <Content Include="Views\Home\MainPageWithoutAuthorization.cshtml" />
     <Content Include="Views\UserHandler\AddRoute.cshtml" />
     <Content Include="Views\Home\AddRoute.cshtml" />
     <Content Include="Views\Home\EditRoute.cshtml" />

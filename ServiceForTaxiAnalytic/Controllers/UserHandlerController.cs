@@ -28,7 +28,7 @@ namespace ServiceForTaxiAnalytic.Controllers
             ViewBag.Route = route;
             if(route != null)
             {
-                return View("EditRoute");
+                return View();
             }
             return HttpNotFound();
         }
