@@ -2,6 +2,7 @@
 @{
 	ViewBag.Title = "MainPage";
 }
+       
 <head>
 	<meta name="viewport" content="width=device-width" user-scalable="no" />
 	<p>Здравствуйте! Вас приветствует наш сервис по аналитике цен на такси в разное время дня.
@@ -10,6 +11,7 @@
 </head>
 <body>
 <div>
+	<p>Значение= @ViewBag.Name</p>
 	<form method="post" action="Authorization/Authorization/">
 		<input type="submit" value="Регистрация" name="Registration"/>
 		<input type="submit" value="Вход" name="Entrance"/>

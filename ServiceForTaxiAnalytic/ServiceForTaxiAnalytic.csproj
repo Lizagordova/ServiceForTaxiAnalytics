@@ -171,6 +171,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\WhatIsNextToMe - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -185,6 +186,7 @@
     <Content Include="Views\Authorization\Entrance.cshtml" />
     <Content Include="Views\Authorization\Registration.cshtml" />
     <Content Include="Views\Authorization\Test.cshtml" />
+    <Content Include="Views\Home\ApiYandex.cshtml" />
     <Content Include="Views\Home\MainPage.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

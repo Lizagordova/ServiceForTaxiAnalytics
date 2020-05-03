@@ -10,23 +10,27 @@
 <body>
 <div>
     <form method="post" action="">
+
         <p1>привет,@ViewBag.UserId and @ViewBag.UserIp!Name = @ViewBag.UserInformation</p1>
-        <input type="hidden" value="@ViewBag.UserIp" name="UserIp" />
+        <input type="hidden" value="@ViewBag.UserIp" name="UserIp"/>
         <table>
             <tr>
-                <td><p>Введите свой e-mail</p></td>
-                <td><input type="text" placeholder="e-mail" name="Email" /></td>
+                <td>
+                    <p>Введите свой e-mail</p></td>
+                <td><input type="text" placeholder="e-mail" name="Email"/></td>
             </tr>
             <tr>
-                <td><p>Введите адрес отправления</p></td>
-                <td><input type="text" placeholder="Откуда" name="From" /></td>
+                <td>
+                    <p>Введите адрес отправления</p></td>
+                <td><input type="text" placeholder="Откуда" name="From"/></td>
             </tr>
             <tr>
-                <td><p>Введите адрес назначения</p></td>
+                <td>
+                    <p>Введите адрес назначения</p></td>
                 <td><input type="text" placeholder="А куда вообще" name="To"/></td>
             </tr>
             <tr>
-                <td><input type="submit" value="Получить аналитику" /></td>
+                <td><input type="submit" value="Получить аналитику"/></td>
             </tr>
         </table>
     </form>
