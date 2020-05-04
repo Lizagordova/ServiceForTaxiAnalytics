@@ -3,34 +3,30 @@
 }
 <head>
     <meta name="viewport" content="width=device-width" user-scalable="no" />
-    <p>Здравствуйте! Вас приветствует наш сервис по аналитике цен на такси в разное время дня.
-        Для аналитики Вы можете ввести маршрут, по которому бы Вам было интересно узнать аналитику.
-        Мы проведем аналитику в течение дня. И ровно через сутки пришлём её Вам на почту. Спасибо за доверие!</p>
+    <p>Здравствуйте! Вы можете найти кафе рядом с вами</p>
 </head>
 <body>
 <div>
     <form method="post" action="">
-
-        <p1>привет,@ViewBag.UserId and @ViewBag.UserIp!Name = @ViewBag.UserInformation</p1>
         <input type="hidden" value="@ViewBag.UserIp" name="UserIp"/>
         <table>
             <tr>
                 <td>
-                    <p>Введите свой e-mail</p></td>
-                <td><input type="text" placeholder="e-mail" name="Email"/></td>
+                    <p>Город</p></td>
+                <td><input type="text" placeholder="City" name="City"/></td>
             </tr>
             <tr>
                 <td>
-                    <p>Введите адрес отправления</p></td>
-                <td><input type="text" placeholder="Откуда" name="From"/></td>
+                    <p>Улица</p></td>
+                <td><input type="text" placeholder="Street" name="Street"/></td>
             </tr>
             <tr>
                 <td>
-                    <p>Введите адрес назначения</p></td>
-                <td><input type="text" placeholder="А куда вообще" name="To"/></td>
+                    <p>Дом</p></td>
+                <td><input type="text" placeholder="House" name="House"/></td>
             </tr>
             <tr>
-                <td><input type="submit" value="Получить аналитику"/></td>
+                <td><input type="submit" value="Что рядом со мной?"/></td>
             </tr>
         </table>
     </form>

@@ -1,0 +1,3 @@
+﻿CREATE TABLE [Category]
+([Id] INT PRIMARY KEY IDENTITY,
+[Name] NVARCHAR(100))

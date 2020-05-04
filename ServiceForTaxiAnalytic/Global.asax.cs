@@ -19,7 +19,6 @@ namespace ServiceForTaxiAnalytic
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-			Database.SetInitializer(new ServiceDbInitializer());
 		}
 	}
 }

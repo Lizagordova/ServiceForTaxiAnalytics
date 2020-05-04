@@ -141,19 +141,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuthorizationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\UserHandlerController.cs" />
     <Compile Include="Controllers\WorkerController.cs" />
     <Compile Include="Enums\AuthorizationType.cs" />
     <Compile Include="Enums\Taxi.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cafes.cs" />
+    <Compile Include="Models\Cafe_Tag.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Log.cs" />
-    <Compile Include="Models\RouteForFinding.cs" />
-    <Compile Include="Models\ServiceContext.cs" />
-    <Compile Include="Models\ServiceDbInitializer.cs" />
-    <Compile Include="Models\User.cs" />
-    <Compile Include="Models\UserRoute.cs" />
+    <Compile Include="Models\Tag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +163,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="DatabaseLayer\CreateTables\Create[Cafe_Tag].sql" />
+    <Content Include="DatabaseLayer\CreateTables\Create[Category].sql" />
+    <Content Include="DatabaseLayer\CreateTables\Create[Tag].sql" />
+    <Content Include="DatabaseLayer\InsertData\InsertFirstData.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -201,8 +203,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\MainPageWithoutAuthorization.cshtml" />
     <Content Include="Views\UserHandler\AddRoute.cshtml" />
-    <Content Include="Views\Home\AddRoute.cshtml" />
-    <Content Include="Views\Home\EditRoute.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Worker\" />
@@ -219,6 +219,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\TypeScript\MainPage.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
