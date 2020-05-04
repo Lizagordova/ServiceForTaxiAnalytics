@@ -6,29 +6,33 @@
     <p>Здравствуйте! Вы можете найти кафе рядом с вами</p>
 </head>
 <body>
-<div>
-    <form method="post" action="">
-        <input type="hidden" value="@ViewBag.UserIp" name="UserIp"/>
-        <table>
-            <tr>
-                <td>
-                    <p>Город</p></td>
-                <td><input type="text" placeholder="City" name="City"/></td>
-            </tr>
-            <tr>
-                <td>
-                    <p>Улица</p></td>
-                <td><input type="text" placeholder="Street" name="Street"/></td>
-            </tr>
-            <tr>
-                <td>
-                    <p>Дом</p></td>
-                <td><input type="text" placeholder="House" name="House"/></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Что рядом со мной?"/></td>
-            </tr>
-        </table>
-    </form>
+<div id="content"></div>
+<button class="btn" id="loadBtn" onclick="ConfirmSubmit()">Загрузить</button>
+<button class="btn" id="displayBtn">Показать</button>
+<script src="~/Scripts/MainPage.js"></script>
+<form method="post" action="">
+    
+    <input type="hidden" value="@ViewBag.UserIp" name="UserIp"/>
+    <table>
+        <tr>
+            <td>
+                <p>Город</p></td>
+            <td><input type="text" placeholder="City" name="City"/></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Улица</p></td>
+            <td><input type="text" placeholder="Street" name="Street"/></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Дом</p></td>
+            <td><input type="text" placeholder="House" name="House"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Что рядом со мной?"/></td>
+        </tr>
+    </table>
+</form>
 </div>
 </body>
