@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "MainPage";
 }
+       
 <head>
     <meta name="viewport" content="width=device-width" user-scalable="no" />
     <p>Здравствуйте! Вы можете найти кафе рядом с вами</p>
@@ -10,9 +11,10 @@
 <button class="btn" id="loadBtn" onclick="ConfirmSubmit()">Загрузить</button>
 <button class="btn" id="displayBtn">Показать</button>
 <script src="~/Scripts/MainPage.js"></script>
-<form method="post" action="">
-    
-    <input type="hidden" value="@ViewBag.UserIp" name="UserIp"/>
+  
+<input type="hidden" value="@ViewBag.UserIp" name="UserIp"/>
+@using(Html.BeginForm("UserRequest", "Home", FormMethod.Post))
+{
     <table>
         <tr>
             <td>
@@ -33,6 +35,5 @@
             <td><input type="submit" value="Что рядом со мной?"/></td>
         </tr>
     </table>
-</form>
-</div>
+}
 </body>

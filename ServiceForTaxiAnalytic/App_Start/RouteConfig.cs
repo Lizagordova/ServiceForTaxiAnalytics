@@ -16,7 +16,7 @@ namespace ServiceForTaxiAnalytic
 			routes.MapRoute(
 				name: "Default",
 				url: "{controller}/{action}/{id}",
-				defaults: new { controller = "Home", action = "MainPageWithoutAuthorization", id = UrlParameter.Optional }
+				defaults: new { controller = "Home", action = "MainPage", id = UrlParameter.Optional }
 			);
 
 			Route newRoute = new Route("{controller}/{action}", new MvcRouteHandler());

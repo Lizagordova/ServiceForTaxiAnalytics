@@ -191,6 +191,7 @@
     <Content Include="Views\Authorization\Test.cshtml" />
     <Content Include="Views\Home\ApiYandex.cshtml" />
     <Content Include="Views\Home\MainPage.cshtml" />
+    <Content Include="Views\Home\UserRequest.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -202,7 +203,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\MainPageWithoutAuthorization.cshtml" />
     <Content Include="Views\UserHandler\AddRoute.cshtml" />
   </ItemGroup>
   <ItemGroup>

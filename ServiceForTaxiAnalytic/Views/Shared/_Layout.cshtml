@@ -6,19 +6,32 @@
     @Styles.Render("~/Content/css")
     <link href="@Url.Content("~/Content/Site.css") rel="stylesheet" type="text/css" />
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css")
 </head>
 <body>
+<div class="container">
     <nav>
-        <ul class="menu">
-            <li>@Html.ActionLink("Главная","MainPage","Home")</li>
-             <li>@Html.ActionLink("Братья караваевы","ApiYandex","Home")</li>
-            
-        </ul>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="menu">
+                    <li>@Html.ActionLink("Главная", "MainPage", "Home")</li>
+                    <li>@Html.ActionLink("Братья караваевы", "ApiYandex", "Home")</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <form method="post" action="Authorization/Authorization/">
+                    <input type="submit" value="Регистрация" name="Registration"/>
+                    <input type="submit" value="Вход" name="Entrance"/>
+                </form>
+            </div>
+        </div>
+      
     </nav>
-  @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year- Service For Taxi Analytic</p>
-        </footer>
+</div>
+@RenderBody()
+<hr/>
+<footer>
+    <p>&copy; @DateTime.Now.Year- Service For Taxi Analytic</p>
+</footer>
 </body>
 </html>

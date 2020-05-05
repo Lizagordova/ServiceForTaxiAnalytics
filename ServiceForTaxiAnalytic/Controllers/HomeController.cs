@@ -8,19 +8,25 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
+using System.Web;
 using System.Web.Mvc;
 
 namespace ServiceForTaxiAnalytic.Controllers
 {
 	public class HomeController : Controller
 	{
-	public ActionResult MainPageWithoutAuthorization()
+	public ActionResult MainPage()
 	{
-			GetCafes();
-
 			return View();
-		}
+	}
 
+	public ActionResult UserRequest()
+	{
+		Session["City"] = Request.Form["City"];
+		Session["Street"] = Request.Form["Street"];
+		Session["House"] = Request.Form["House"];
+		return View();
+	}
 	public JsonResult GetCafes()
 	{
 		List<Cafes> cafes = new List<Cafes>();
@@ -41,13 +47,8 @@ namespace ServiceForTaxiAnalytic.Controllers
 		}
 		return Json(cafes, JsonRequestBehavior.AllowGet);
 	}
-	
-		public ActionResult MainPage()
-		{
-			return View();
-		}
 
-		public ActionResult ApiYandex()
+	public ActionResult ApiYandex()
 		{
 			var webClient = new WebClient();
 			var webRequest = WebRequest.Create("https://www.karavaevi.ru/about/adress.php");
