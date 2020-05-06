@@ -1,8 +1,22 @@
 ﻿@{
     ViewBag.Title = "MainPage";
 }
+@model List<ServiceForTaxiAnalytic.Models.Cafe>
 <div>
     <p>Ваш город: @Session["City"]</p>
     <p>Ваша улица: @Session["Street"]</p>
     <p>Ваш дом: @Session["House"]</p>
+    <table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+             <td>
+                 @item.Address
+              </td>
+        </tr>
+    }
+    </table>
 </div>

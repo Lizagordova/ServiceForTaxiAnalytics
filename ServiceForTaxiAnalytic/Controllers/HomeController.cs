@@ -17,20 +17,41 @@ namespace ServiceForTaxiAnalytic.Controllers
 	{
 	public ActionResult MainPage()
 	{
-			return View();
+		var locations = new List<Location>();
+		string connectionString = "Server=tcp:portfolio25.database.windows.net,1433;Initial Catalog=WhatIsNextToMe_db;Persist Security Info=False;User ID=Elizaveta;Password=Uav7bha2309";
+		var sql = "Select * from Location";
+		using (var connection = new SqlConnection(connectionString))
+		{
+			connection.Open();
+			var command = new SqlCommand(sql, connection);
+			using (var reader = command.ExecuteReader())
+			{
+				while (reader.Read())
+				{
+					var location = new Location();
+					location.Name = reader.GetValue(1).ToString();
+					switch (reader.GetValue(2).ToString())
+					{
+						case "1":
+							location.Type = 1;
+							break;
+						case "2":
+							location.Type = 2;
+							break;
+						case "3":
+							location.Type = 3;
+							break;
+					}
+					locations.Add(location);
+				}
+			}
+		}
+		return View(locations);
 	}
 
 	public ActionResult UserRequest()
 	{
-		Session["City"] = Request.Form["City"];
-		Session["Street"] = Request.Form["Street"];
-		Session["House"] = Request.Form["House"];
-		return View();
-	}
-	public JsonResult GetCafes()
-	{
-		List<Cafes> cafes = new List<Cafes>();
-		//string connectionString = @"Data Source=portfolio25.database.windows.net;Initial Catalog=WhatIsNextTo;User ID=Elizaveta;Password=Uav7bha2309;Connect Timeout=100;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
+		var cafes = new List<Cafe>();
 		string connectionString = "Server=tcp:portfolio25.database.windows.net,1433;Initial Catalog=WhatIsNextToMe_db;Persist Security Info=False;User ID=Elizaveta;Password=Uav7bha2309";
 		string sql = "select * from Cafes";
 		using (var connection = new SqlConnection(connectionString))
@@ -41,7 +62,36 @@ namespace ServiceForTaxiAnalytic.Controllers
 			{
 				while (reader.Read())
 				{
-					ViewBag.Name = reader.GetValue(1);
+					var cafe = new Cafe();
+					cafe.Name = reader.GetValue(1).ToString();
+					cafe.Address = reader.GetValue(2).ToString();
+					ViewBag.Name = ViewBag.Name + reader.GetValue(1);
+					ViewBag.Address = ViewBag.Address + reader.GetValue(2);
+					cafes.Add(cafe);
+					ViewBag.Cafes = ViewBag.Cafes + cafe;
+				}
+			}
+		}
+
+		return View(cafes);
+	}
+	public JsonResult GetCafes()
+	{
+		var cafes = new List<Cafe>();
+		string connectionString = "Server=tcp:portfolio25.database.windows.net,1433;Initial Catalog=WhatIsNextToMe_db;Persist Security Info=False;User ID=Elizaveta;Password=Uav7bha2309";
+		string sql = "select * from Cafes";
+		using (var connection = new SqlConnection(connectionString))
+		{
+			connection.Open();
+			var command = new SqlCommand(sql, connection);
+			using (var reader = command.ExecuteReader())
+			{
+				while (reader.Read())
+				{
+					var cafe = new Cafe();
+					cafe.Name = reader.GetValue(1).ToString();
+					cafe.Address = reader.GetValue(2).ToString();
+					ViewBag.Cafes = ViewBag.Cafes + cafe;
 				}
 			}
 		}

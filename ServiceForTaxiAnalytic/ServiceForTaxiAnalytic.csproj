@@ -147,9 +147,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cafes.cs" />
+    <Compile Include="Models\Cafe.cs" />
     <Compile Include="Models\Cafe_Tag.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -165,6 +166,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="DatabaseLayer\CreateTables\Create[Cafe_Tag].sql" />
     <Content Include="DatabaseLayer\CreateTables\Create[Category].sql" />
+    <Content Include="DatabaseLayer\CreateTables\Create[Location].sql" />
     <Content Include="DatabaseLayer\CreateTables\Create[Tag].sql" />
     <Content Include="DatabaseLayer\InsertData\InsertFirstData.sql" />
     <Content Include="favicon.ico" />

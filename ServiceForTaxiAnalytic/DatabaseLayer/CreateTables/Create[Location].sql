@@ -1,0 +1,4 @@
+﻿CREATE TABLE Location (
+[Id] INT PRIMARY KEY IDENTITY,
+[Name] NVARCHAR(250),
+[Type] INT )

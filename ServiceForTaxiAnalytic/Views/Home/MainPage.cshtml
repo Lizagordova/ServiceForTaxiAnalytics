@@ -1,7 +1,9 @@
 ﻿@{
     ViewBag.Title = "MainPage";
 }
-       
+ @Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@model List<ServiceForTaxiAnalytic.Models.Location>
 <head>
     <meta name="viewport" content="width=device-width" user-scalable="no" />
     <p>Здравствуйте! Вы можете найти кафе рядом с вами</p>
@@ -11,29 +13,82 @@
 <button class="btn" id="loadBtn" onclick="ConfirmSubmit()">Загрузить</button>
 <button class="btn" id="displayBtn">Показать</button>
 <script src="~/Scripts/MainPage.js"></script>
-  
-<input type="hidden" value="@ViewBag.UserIp" name="UserIp"/>
+
 @using(Html.BeginForm("UserRequest", "Home", FormMethod.Post))
-{
-    <table>
-        <tr>
-            <td>
-                <p>Город</p></td>
-            <td><input type="text" placeholder="City" name="City"/></td>
-        </tr>
-        <tr>
-            <td>
-                <p>Улица</p></td>
-            <td><input type="text" placeholder="Street" name="Street"/></td>
-        </tr>
-        <tr>
-            <td>
-                <p>Дом</p></td>
-            <td><input type="text" placeholder="House" name="House"/></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="Что рядом со мной?"/></td>
-        </tr>
-    </table>
+{<div class="container">
+<div class="row">
+    <div class="col-md-4">
+        <table>
+            <tr>
+                <td>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            Город <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            @foreach (var item in Model)
+                            {
+                                if (item.Type == 1)
+                                {
+                                    <li><a href="#">@item.Name</a></li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" name="City">
+                            Улица <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            @foreach (var item in Model)
+                            {
+                                if (item.Type == 2)
+                                {
+                                    <li><a href="#">@item.Name</a></li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            Дом <span class="caret"></span>
+                        </button>
+
+                        <ul class="dropdown-menu" role="menu">
+                            @foreach (var item in Model)
+                            {
+                                if (item.Type == 3)
+                                {
+                                    <li><a href="#">@item.Name</a></li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Что рядом со мной?"/></td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-8 col-md-offset-4">
+        <ul>
+            <li>Что вы ищете?</li>
+            <ul>
+                <li>Кафе</li>
+                <li>Магазины</li>
+            </ul>
+        </ul>
+    </div>
+</div>
+</div>
 }
 </body>

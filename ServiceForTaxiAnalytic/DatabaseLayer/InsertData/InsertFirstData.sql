@@ -18,3 +18,16 @@ INSERT INTO [dbo].[Cafe_Tag]
  VALUES (4,1),(4,4),
  (4,7),(5,1),
  (5,5),(5,8)
+ 
+ INSERT INTO [dbo].[Location] 
+([Name], [Type])
+ VALUES
+('Ivanovo','1'),
+('Moscow','1'),
+('Vladimir','1'),
+('Gercen','2'),
+('Tabochaya','2'),
+('Novaya ilinka','2'),
+('1','3'),
+('2','3'),
+('3','3')
