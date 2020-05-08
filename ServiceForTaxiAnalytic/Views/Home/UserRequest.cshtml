@@ -1,22 +1,31 @@
 ﻿@{
     ViewBag.Title = "MainPage";
 }
+ @Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
 @model List<ServiceForTaxiAnalytic.Models.Cafe>
 <div>
-    <p>Ваш город: @Session["City"]</p>
-    <p>Ваша улица: @Session["Street"]</p>
-    <p>Ваш дом: @Session["House"]</p>
-    <table>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @item.Name
-            </td>
-             <td>
-                 @item.Address
-              </td>
-        </tr>
-    }
-    </table>
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table table-bordered table-hover">
+                <tbody>
+                <tr>
+                    <th>Название</th>
+                    <th>Адрес</th>
+                </tr>
+                </tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.Name
+                        </td>
+                        <td>
+                            @item.Address
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
 </div>

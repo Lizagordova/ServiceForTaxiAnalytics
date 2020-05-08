@@ -14,8 +14,9 @@
 <button class="btn" id="displayBtn">Показать</button>
 <script src="~/Scripts/MainPage.js"></script>
 
-@using(Html.BeginForm("UserRequest", "Home", FormMethod.Post))
-{<div class="container">
+@using(Html.BeginForm("UserRequest", "Home", FormMethod.Post, new { @class="form-inline", role="form"}))
+{
+   <div class="container">
 <div class="row">
     <div class="col-md-4">
         <table>
@@ -79,14 +80,29 @@
             </tr>
         </table>
     </div>
-    <div class="col-md-8 col-md-offset-4">
-        <ul>
-            <li>Что вы ищете?</li>
-            <ul>
-                <li>Кафе</li>
-                <li>Магазины</li>
-            </ul>
-        </ul>
+    <div class="col-md-4 col-md-offset-4">
+        <div class="form-group">
+            <p>ФИЛЬТРЫ</p>
+            <div class="btn-group" data-toggle="button">
+                <button type="button" class="btn">Вегетарианский</button>
+                <button type="button" class="btn">Фастфуд</button>
+                <button type="button" class="btn">Обычная еда</button>
+            </div>
+            <table class="table table-stripped table-hover">
+                <tr>
+                    <td>Цена</td>
+                </tr>
+                <tr>
+                    <td>
+                        <th>Тип</th>
+                
+                    </td>
+                </tr>
+                <tr>
+                    <td>Время работы</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
 </div>

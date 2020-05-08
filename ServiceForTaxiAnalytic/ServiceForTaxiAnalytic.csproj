@@ -192,6 +192,7 @@
     <Content Include="Views\Authorization\Registration.cshtml" />
     <Content Include="Views\Authorization\Test.cshtml" />
     <Content Include="Views\Home\ApiYandex.cshtml" />
+    <Content Include="Views\Home\CafesList.cshtml" />
     <Content Include="Views\Home\MainPage.cshtml" />
     <Content Include="Views\Home\UserRequest.cshtml" />
     <Content Include="Web.config" />
